@@ -27,7 +27,7 @@ function viewCart() {
   } else if (cart.length ===2) {
       var key0 = Object.keys(cart[0]);
       var key1 = Object.keys(cart[1]);
-      cartContents = ` ${key0} at ${cart[0].key0} and ${key1]} at ${cart[1].key0}.`
+      cartContents = ` ${key0} at ${cart[0].key0} and ${key1} at ${cart[1].key0}.`
   } else {
       for (var i = 0; i < cart.length; i++) {
         var key = Object.keys(cart[i]);
