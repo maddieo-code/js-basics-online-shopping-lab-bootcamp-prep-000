@@ -19,16 +19,19 @@ function addToCart(item) {
 
 function viewCart() {
   var cartContents = "In your cart you have";
-  var keys = Object.keys(cart)
   if (!cart.length) {
     cartContents = "Your shopping cart is empty.";
   } else if (cart.length === 1) {
-      cartContents = ` ${keys[0]} at ${cart[0].keys}.`
+      var key = Object.keys(cart[0]);
+      cartContents = ` ${key} at ${cart[0].key}.`
   } else if (cart.length ===2) {
-      cartContents = ` ${keys[0]} at ${cart[0].keys[0]} and ${keys[1]} at ${cart[1].keys[1]}.`
+      var key0 = Object.keys(cart[0]);
+      var key1 = Object.keys(cart[1]);
+      cartContents = ` ${key0} at ${cart[0].key0} and ${key1]} at ${cart[1].key0}.`
   } else {
       for (var i = 0; i < cart.length; i++) {
-        cartContents = `${cartContents} ${keys[i]} at ${cart[i].keys[i]}, and `;
+        var key = Object.keys(cart[i]);
+        cartContents = `${cartContents} ${key} at ${cart[i].key, and `;
       }
   }
   return cartContents;
